@@ -53,9 +53,9 @@ import { Platform } from 'react-native';
         PushNotification.localNotification({
             /* Android Only Properties */
             // ...this.buildAndroidNotification(id, title, message, data, options),
-             buildAndroidNotification(id, title, message, data, options)
+            buildAndroidNotification(id, title, message, data, options),
             /* iOS and Android properties */
-                buildIOSNotification(id, title, message, data, options)
+            buildIOSNotification(id, title, message, data, options),
             // ...this.buildIOSNotification(id, title, message, data, options),
             /* iOS and Android properties */
             title: title || "",
@@ -95,6 +95,7 @@ import { Platform } from 'react-native';
         }
     }
 
+    // cancel remove all noti
     const cancelAllLocalNotifications = () => {
         if (Platform.OS === 'ios') {
             PushNotificationIOS.removeAllDeliveredNotifications();
